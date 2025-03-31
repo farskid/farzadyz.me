@@ -5,7 +5,7 @@ import { MetadataOverrides } from "../src/types";
 export const DEFAULT_TITLE = "Farzad Yousefzadeh";
 export const DEFAULT_DESCRIPTION =
   "Personal website owned by Farzad Yousefzadeh";
-export const DEFAULT_URL = "https://farzadyz.com";
+export const DEFAULT_URL = "https://farzadyz.me";
 
 const OTHER_INFO = {
   fullname: "Farzad Yousefzadeh",

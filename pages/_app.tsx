@@ -54,19 +54,19 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="Subscribe to farzadyz.com/blog"
+            title="Subscribe to farzadyz.me/blog"
             href="/feeds/rss.xml"
           />
           <link
             rel="alternate"
             type="application/atom+xml"
-            title="Subscribe to farzadyz.com/blog"
+            title="Subscribe to farzadyz.me/blog"
             href="/feeds/atom.xml"
           />
           <link
             rel="alternate"
             type="application/feed+json"
-            title="Subscribe to farzadyz.com/blog"
+            title="Subscribe to farzadyz.me/blog"
             href="/feeds/feed.json"
           />
           <link

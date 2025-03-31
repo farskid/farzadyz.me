@@ -31,7 +31,7 @@ const PostPage: React.FC<{
     title: post.title,
     description: post.description,
     originalURL: post.originalURL,
-    url: `https://farzadyz.com/blog/${post.slug}`,
+    url: `https://farzadyz.me/blog/${post.slug}`,
     article: {
       publishedTime: post.publishedAt,
       authors: ["Farzad Yousefzadeh"],
@@ -46,7 +46,7 @@ const PostPage: React.FC<{
       "text",
       `Check out: ${post.title} by ${metadata.social.twitter.handle}`
     );
-    u.searchParams.append("url", `https://farzadyz.com/blog/${post.slug}`);
+    u.searchParams.append("url", `https://farzadyz.me/blog/${post.slug}`);
     u.searchParams.append("hashtags", hashtags);
     return u.toString();
   }, [post, metadata.social.twitter.handle]);
@@ -98,7 +98,7 @@ const PostPage: React.FC<{
             <Box display="flex" gridGap="5">
               <ChakraLink
                 isExternal
-                href={`https://github.com/farskid/farzadyz.com/edit/main/content/posts/${post.fileName}`}
+                href={`https://github.com/farskid/farzadyz.me/edit/main/content/posts/${post.fileName}`}
                 fontSize="md"
                 textDecoration="underline"
               >

@@ -1,6 +1,6 @@
-# Farzadyz.com
+# Farzadyz.me
 
-[Monitor Analytics](https://app.splitbee.io/projects/farzadyz.com)
+[Monitor Analytics](https://app.splitbee.io/projects/farzadyz.me)
 
 - [Install](#install)
 - [Run locally](#run-locally)
@@ -10,9 +10,9 @@
 ## Install
 
 1. Clone the engineering blog repository to your machine:<br/>
-   `$ git clone git@github.com:farskid/farzadyz.com.git`
+   `$ git clone git@github.com:farskid/farzadyz.me.git`
 2. Navigate into the engineering blog folder:<br/>
-   `$ cd eng-blog`
+   `$ cd farzadyz.me`
 3. Install [yarn package manager](https://yarnpkg.com) globally if you don’t already have yarn installed on your machine:<br/>
    `$ npm install -g yarn`
 4. Install the dependencies for this project:<br/>

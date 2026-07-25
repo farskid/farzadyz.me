@@ -15,7 +15,7 @@ const HomePage: NextPage = () => {
         <VStack gridGap="8">
           <Box gridGap="5" display="flex" flexDirection="column">
             <p>
-              I'm a Principal Software Engineer at{" "}
+              I&apos;m a Principal Software Engineer at{" "}
               <Link
                 textDecoration="underline"
                 isExternal

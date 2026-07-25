@@ -98,6 +98,7 @@ const PostPage: React.FC<{
             <Box display="flex" gridGap="5">
               <ChakraLink
                 isExternal
+                rel="nofollow noopener noreferrer"
                 href={`https://github.com/farskid/farzadyz.me/edit/main/content/posts/${post.fileName}`}
                 fontSize="md"
                 textDecoration="underline"
@@ -106,6 +107,7 @@ const PostPage: React.FC<{
               </ChakraLink>
               <ChakraLink
                 isExternal
+                rel="nofollow noopener noreferrer"
                 href={shareURL}
                 fontSize="md"
                 textDecoration="underline"

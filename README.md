@@ -1,6 +1,6 @@
 # Farzadyz.me
 
-[Monitor Analytics](https://app.splitbee.io/projects/farzadyz.me)
+Analytics: [GoatCounter](https://farzadyzme.goatcounter.com/) — defaults to `farzadyzme`; override with `NEXT_PUBLIC_GOATCOUNTER_CODE` if needed.
 
 - [Install](#install)
 - [Run locally](#run-locally)

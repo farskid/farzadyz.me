@@ -10,8 +10,6 @@ import Router from "next/router";
 import NextHead from "next/head";
 import { MetadataProvider } from "../src/MetadataContext";
 import { makeMetadata } from "../content/metadata";
-import splitbee from "@splitbee/web";
-import { useEffect } from "react";
 
 /* NProgress */
 NProgress.configure({ showSpinner: false });
@@ -19,28 +17,24 @@ NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => {
+Router.events.on("routeChangeComplete", (url) => {
   NProgress.done();
+  // Client-side navigations — initial load is counted by count.js onload
+  if (typeof window !== "undefined" && window.goatcounter?.count) {
+    window.goatcounter.count({
+      path: url,
+    });
+  }
 });
 Router.events.on("routeChangeError", () => {
   NProgress.done();
 });
 /* /NProgress */
 
+const goatcounterCode =
+  process.env.NEXT_PUBLIC_GOATCOUNTER_CODE || "farzadyzme";
+
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      console.log("Analytics initialized");
-      splitbee.init({
-        disableCookie: true,
-        scriptUrl: "https://cdn.splitbee.io/sb.js",
-        apiUrl: "https://hive.splitbee.io",
-        token: process.env.NEXT_PUBLIC_ANALYTICS_TOKEN,
-      });
-    } else {
-      console.log("Non-prod mode, skipping analytics");
-    }
-  }, []);
   return (
     <MetadataProvider
       value={{
@@ -90,11 +84,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="theme-color" content="#ffffff" />
-          {/* <script
-            defer
-            data-domain="stately.ai"
-            src="https://plausible.io/js/plausible.js"
-          ></script> */}
+          {process.env.NODE_ENV === "production" && goatcounterCode ? (
+            <script
+              data-goatcounter={`https://${goatcounterCode}.goatcounter.com/count`}
+              async
+              src="https://gc.zgo.at/count.js"
+            />
+          ) : null}
         </NextHead>
         <Component {...pageProps} />
       </ChakraProvider>

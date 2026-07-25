@@ -2,10 +2,9 @@ import { NextPage } from "next";
 import { Layout } from "../src/Layout";
 import { getAllPosts } from "../src/posts";
 import { Seo } from "../src/Seo";
-import { Link, Box, Button, HStack, VStack } from "@chakra-ui/react";
+import { Link, Box, VStack } from "@chakra-ui/react";
 import { useMetadata } from "../src/MetadataContext";
 import NextLink from "next/link";
-import { trackTwitterFollow } from "../src/analytics";
 
 const HomePage: NextPage = () => {
   const { default: metadata } = useMetadata();
@@ -14,111 +13,87 @@ const HomePage: NextPage = () => {
       <Seo />
       <Layout>
         <VStack gridGap="8">
-          <HStack>
-            <Button
-              as={Link}
-              href={metadata.social.twitter.link}
-              isExternal
-              color="white"
-              bg="gray.900"
-              _hover={{
-                bg: "gray.700",
-                textDecoration: "none",
-                color: "white",
-              }}
-              _focus={{ bg: "gray.700" }}
-              onClick={() => {
-                trackTwitterFollow();
-              }}
-            >
-              Follow me on Twitter
-            </Button>
-          </HStack>
           <Box gridGap="5" display="flex" flexDirection="column">
             <p>
-              I`m a Lead Engineer at{" "}
+              I'm a Principal Software Engineer at{" "}
               <Link
                 textDecoration="underline"
                 isExternal
-                href="https://stately.ai"
+                rel="nofollow noopener noreferrer"
+                href="https://lottiefiles.com"
               >
-                <strong>Stately.ai</strong>
+                <strong>LottieFiles</strong>
+              </Link>
+              , where I work on the{" "}
+              <Link
+                textDecoration="underline"
+                isExternal
+                rel="nofollow noopener noreferrer"
+                href="https://creator.lottiefiles.com/"
+              >
+                Creator
               </Link>{" "}
-              and living in Finland.
+              platform.
             </p>
             <p>
-              I`m interested in <strong>Javascript</strong>,{" "}
-              <strong>Typescript</strong>, <strong>React</strong>,{" "}
-              <strong>React Native</strong>, <strong>Nodejs</strong> and{" "}
-              <strong>Serverless</strong>. Fascinated by{" "}
-              <strong>DX Tooling</strong> and <strong>Automation</strong>.
+              I specialize in <strong>developer tooling</strong>, and these
+              days I build <strong>AI-capable software</strong> and custom
+              agent harnesses. My work spans workflow engines, web rendering
+              engines, CLIs, SDKs, compilers and AST tooling, custom protocols
+              and serialization, and context and memory management for AI
+              agents.
             </p>
             <p>
-              <strong>
-                <NextLink href="/appearances#talks" passHref>
-                  <Link textDecoration="underline">
-                    Public technical speaker
-                  </Link>
-                </NextLink>
-              </strong>
-              . Passionate about <strong>UI Engineering</strong>,{" "}
-              <strong>Statecharts</strong> and <strong>Reactivity</strong>.
+              Previously, I was a core contributor to{" "}
+              <Link
+                textDecoration="underline"
+                isExternal
+                rel="nofollow noopener noreferrer"
+                href="https://github.com/statelyai/xstate"
+              >
+                XState
+              </Link>{" "}
+              and Stately, led game services at Epic Games and worked on a wide
+              range of software throughout my career.
             </p>
             <p>
-              My personal hobbies include going for long walks, music, movies,
-              book reading, book binding and a set of activities such as Hiking,
-              Football, Badminton, Squash, Fustal, Ping pong and Volleyball. I
-              do also like video games specially the platforming genre. My
-              favourite video game is <em>Hollow Knight</em>.
+              I{" "}
+              <NextLink href="/appearances#talks" passHref>
+                <Link textDecoration="underline">speak at conferences</Link>
+              </NextLink>{" "}
+              about state machines, developer tooling and UI architecture.
             </p>
-            <p>
-              You can actively find me on{" "}
+            <p className="spacing-h spacing-small">
+              You can find me on{" "}
               <Link
                 isExternal
+                rel="nofollow noopener noreferrer"
                 className="social-link "
                 href={metadata.social.twitter.link}
                 textDecoration="underline"
               >
-                <strong>Twitter</strong>
+                Twitter
               </Link>
-              . Come say Hi!
-            </p>
-            <p className="spacing-h spacing-small">
-              You can also find me on:{" "}
+              ,{" "}
               <Link
                 isExternal
+                rel="nofollow noopener noreferrer"
                 className="social-link "
                 href={metadata.social.github.link}
                 textDecoration="underline"
               >
-                <strong>Github</strong>
+                GitHub
               </Link>
-              ,{" "}
+{" "}
+              and{" "}
               <Link
                 isExternal
-                className="social-link "
-                href={metadata.social.stackoverflow.link}
-                textDecoration="underline"
-              >
-                <strong>Stackoverflow</strong>
-              </Link>
-              ,{" "}
-              <Link
-                isExternal
+                rel="nofollow noopener noreferrer"
                 className="social-link "
                 href={metadata.social.linkedin.link}
                 textDecoration="underline"
               >
-                <strong>Linkedin</strong>
-              </Link>{" "}
-              and{" "}
-              <Link
-                isExternal
-                className="social-link "
-                href={metadata.social.medium.link}
-                textDecoration="underline"
-              >
-                <strong>Medium</strong>
+                LinkedIn
               </Link>
               .
             </p>

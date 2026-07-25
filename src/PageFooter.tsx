@@ -7,6 +7,7 @@ export const PageFooter: React.FC = () => (
       <ChakraLink
         textDecoration="underline"
         isExternal
+        rel="nofollow noopener noreferrer"
         href="https://creativecommons.org/licenses/by-nc/2.0/"
       >
         <em>The Creative Commons</em>

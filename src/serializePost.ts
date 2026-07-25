@@ -29,7 +29,7 @@ export function serializePost(
               [
                 rehypeExternalLinks,
                 {
-                  targte: "_blank",
+                  target: "_blank",
                   rel: ["nofollow", "noreferrer", "noopener"],
                 },
               ],

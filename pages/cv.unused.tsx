@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { useMetadata } from "../src/MetadataContext";
 import NextLink from "next/link";
-import { trackCVDownload } from "../src/analytics";
 import { createMarkdownParser } from "../src/utils";
 import * as fs from "fs/promises";
 import { CVInfo, Podcast, Talk } from "../src/types";
@@ -107,9 +106,6 @@ const CV: NextPage<{
                 bg="gray.900"
                 _hover={{ bg: "gray.700" }}
                 _focus={{ bg: "gray.700" }}
-                onClick={() => {
-                  trackCVDownload();
-                }}
               >
                 Download My Latest CV
               </Link>
@@ -211,6 +207,7 @@ const CV: NextPage<{
                 <Link
                   textDecoration="underline"
                   isExternal
+                  rel="nofollow noopener noreferrer"
                   href={metadata.social.github.link}
                   whiteSpace="nowrap"
                 >

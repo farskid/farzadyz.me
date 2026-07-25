@@ -15,14 +15,6 @@ import {
 import { useMetadata } from "./MetadataContext";
 import { useMemo } from "react";
 import { PodcastIcon, Stately, TalkIcon } from "../src/Icons";
-import {
-  track,
-  trackPodcastLink,
-  trackPodcastPlay,
-  trackTalkLink,
-  trackTalkSlides,
-  trackTalkVideo,
-} from "./analytics";
 import { Podcast, Show, Talk } from "./types";
 
 function sortTalksByLatest<T extends { year: number }>(talks: T[]): T[] {
@@ -103,6 +95,7 @@ export const Appearances: React.FC<{
             <WrapItem key={i}>
               <Link
                 isExternal
+                rel="nofollow noopener noreferrer"
                 className="text-capitalize"
                 textDecoration="underline"
                 textTransform="capitalize"
@@ -134,11 +127,9 @@ export const Appearances: React.FC<{
                     <Heading as="h4" fontSize="md">
                       <Link
                         isExternal
+                        rel="nofollow noopener noreferrer"
                         href={talk.videoUrl || talk.slidesUrl}
                         display="block"
-                        onClick={() => {
-                          trackTalkLink(talk.title);
-                        }}
                       >
                         <Text>
                           <strong>{talk.title}</strong>
@@ -154,12 +145,10 @@ export const Appearances: React.FC<{
                       {talk.slidesUrl && (
                         <Link
                           isExternal
+                          rel="nofollow noopener noreferrer"
                           href={talk.slidesUrl}
                           display="block"
                           textDecoration="underline"
-                          onClick={() => {
-                            trackTalkSlides(talk.title);
-                          }}
                         >
                           Slides
                         </Link>
@@ -167,12 +156,10 @@ export const Appearances: React.FC<{
                       {talk.videoUrl && (
                         <Link
                           isExternal
+                          rel="nofollow noopener noreferrer"
                           href={talk.videoUrl}
                           textDecoration="underline"
                           display="block"
-                          onClick={() => {
-                            trackTalkVideo(talk.title);
-                          }}
                         >
                           Video
                         </Link>
@@ -208,11 +195,9 @@ export const Appearances: React.FC<{
                     <Heading as="h4" fontSize="md">
                       <Link
                         isExternal
+                        rel="nofollow noopener noreferrer"
                         href={show.url}
                         display="block"
-                        onClick={() => {
-                          trackTalkLink(show.title);
-                        }}
                       >
                         <Text>
                           <strong>{show.title}</strong>
@@ -249,11 +234,9 @@ export const Appearances: React.FC<{
                     <Heading as="h4" fontSize="md">
                       <Link
                         isExternal
+                        rel="nofollow noopener noreferrer"
                         href={podcast.audioUrl}
                         display="block"
-                        onClick={() => {
-                          trackPodcastLink(podcast.event);
-                        }}
                       >
                         <Text>
                           <strong>{podcast.title.concat(podcast.event)}</strong>
@@ -267,9 +250,6 @@ export const Appearances: React.FC<{
                           as="audio"
                           display="block"
                           width="100%"
-                          onPlay={() => {
-                            trackPodcastPlay(podcast.event);
-                          }}
                           preload="none"
                           src={podcast.audioUrl}
                           controls
@@ -312,27 +292,19 @@ export const Appearances: React.FC<{
                 <HStack>
                   <Link
                     isExternal
+                    rel="nofollow noopener noreferrer"
                     textDecoration="underline"
                     display="block"
                     href="https://www.goodreads.com/book/show/48611191-learn-react-hooks#other_reviews"
-                    onClick={() => {
-                      track(
-                        "https://www.goodreads.com/book/show/48611191-learn-react-hooks#other_reviews"
-                      );
-                    }}
                   >
                     <Text as="small">Goodreads</Text>
                   </Link>
                   <Link
                     isExternal
+                    rel="nofollow noopener noreferrer"
                     textDecoration="underline"
                     display="block"
                     href="https://www.packtpub.com/product/learn-react-hooks/9781838641443"
-                    onClick={() => {
-                      track(
-                        "https://www.packtpub.com/product/learn-react-hooks/9781838641443"
-                      );
-                    }}
                   >
                     <Text as="small">Packt</Text>
                   </Link>

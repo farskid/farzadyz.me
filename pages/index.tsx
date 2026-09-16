@@ -18,8 +18,8 @@ const selectedWork: Array<{
       "A browser-based animation editor. I own the TypeScript editor and canvas UI that sit on top of a Rust and WASM rendering engine.",
   },
   {
-    title: "Stately Visualizer and Inspect",
-    href: "https://github.com/statelyai/xstate-viz",
+    title: "Stately.ai",
+    href: "https://stately.ai/registry",
     description:
       "Visual tooling for XState: the machine visualizer, the inspect protocol for observing live applications, and editor work that keeps diagrams and TypeScript in sync.",
   },
